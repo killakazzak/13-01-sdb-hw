@@ -59,6 +59,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 12.07 seconds
 ```
 
+
 ```sh
 ┌──(root㉿kali)-[~]
 └─# searchsploit vsftpd 2.3.4
@@ -69,7 +70,11 @@ vsftpd 2.3.4 - Backdoor Command Execution                                       
 vsftpd 2.3.4 - Backdoor Command Execution (Metasploit)                                                                                                                                  | unix/remote/17491.rb
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
 Shellcodes: No Results
+```
+https://www.exploit-db.com/exploits/49757
+https://www.exploit-db.com/exploits/17491
 
+```sh
 ┌──(root㉿kali)-[~]
 └─# searchsploit BIND 9.4.2
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
@@ -78,6 +83,8 @@ Shellcodes: No Results
 BIND 9.4.1 < 9.4.2 - Remote DNS Cache Poisoning (Metasploit)                                                                                                                            | multiple/remote/6122.rb
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
 Shellcodes: No Results
+```
+https://www.exploit-db.com/exploits/6122
 
 ┌──(root㉿kali)-[~]
 └─# searchsploit VNC 3.3
@@ -89,6 +96,9 @@ WinVNC Web Server 3.3.3r7 - GET Overflow (Metasploit)                           
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
 Shellcodes: No Results
 ```
+https://www.exploit-db.com/exploits/16489
+https://www.exploit-db.com/exploits/16491
+
 
 ### Задание 2
 
