@@ -167,12 +167,13 @@ Nmap done: 1 IP address (1 host up) scanned in 0.23 seconds
   - Сетевой трафик включает отправку пакетов без флагов и, возможно, RST пакетов.
 
 ```
-└─# nmap -sA 10.46.48.152
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-06-27 07:17 EDT
-Nmap scan report for 10.46.48.152
-Host is up (0.00096s latency).
-All 1000 scanned ports on 10.46.48.152 are in ignored states.
+└─# nmap -sA 10.159.86.74
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-06-27 07:57 EDT
+Nmap scan report for ubuntu-client.dit.local (10.159.86.74)
+Host is up (0.00019s latency).
+All 1000 scanned ports on ubuntu-client.dit.local (10.159.86.74) are in ignored states.
 Not shown: 1000 unfiltered tcp ports (reset)
+MAC Address: 00:0C:29:FA:DD:34 (VMware)
 
 Nmap done: 1 IP address (1 host up) scanned in 0.19 seconds
 ```
@@ -222,3 +223,20 @@ Nmap done: 1 IP address (1 host up) scanned in 1.40 seconds
   - В режиме UDP, Nmap отправляет UDP пакеты на целевой порт и анализирует ответы. Если порт открыт, Nmap получит ответ. Если порт закрыт, Nmap получит ICMP пакет "Destination Unreachable" или не получит никакого ответа. В Wireshark вы увидите UDP пакеты и возможно ICMP пакеты "Destination Unreachable".
 
 ```sh
+└─# nmap -sU 10.159.86.74
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-06-27 07:39 EDT
+Nmap scan report for ubuntu-client.dit.local (10.159.86.74)
+Host is up (0.00028s latency).
+Not shown: 993 closed udp ports (port-unreach)
+PORT     STATE         SERVICE
+53/udp   open          domain
+68/udp   open|filtered dhcpc
+69/udp   open|filtered tftp
+111/udp  open          rpcbind
+137/udp  open          netbios-ns
+138/udp  open|filtered netbios-dgm
+2049/udp open          nfs
+MAC Address: 00:0C:29:FA:DD:34 (VMware)
+
+Nmap done: 1 IP address (1 host up) scanned in 1028.09 seconds
+```
