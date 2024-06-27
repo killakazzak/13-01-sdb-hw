@@ -240,3 +240,14 @@ MAC Address: 00:0C:29:FA:DD:34 (VMware)
 
 Nmap done: 1 IP address (1 host up) scanned in 1028.09 seconds
 ```
+Запись сканирования с помощью tshark
+
+```sh
+┌──(root㉿kali)-[~]
+└─# tshark -w nmap-ss.pcap -i eth0 host 10.159.86.74
+Running as user "root" and group "root". This could be dangerous.
+Capturing on 'eth0'
+2039
+2041
+```
+
