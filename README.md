@@ -124,16 +124,101 @@ https://www.exploit-db.com/exploits/16491
   - Если порт закрыт, Nmap получает RST пакет.
   - Сетевой трафик включает отправку SYN и ACK пакетов.
 
+```sh
+└─# nmap -sS 10.159.86.74
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-06-27 07:39 EDT
+Nmap scan report for ubuntu-client.dit.local (10.159.86.74)
+Host is up (0.00072s latency).
+Not shown: 977 closed tcp ports (reset)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown
+MAC Address: 00:0C:29:FA:DD:34 (VMware)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.23 seconds
+
+```
+
 - Режим FIN:
   - В режиме FIN Nmap отправляет пакеты без флагов на целевой порт.
   - Если порт закрыт, удаленный хост должен отправить RST пакет в ответ.
   - Если порт открыт, удаленный хост должен проигнорировать пакет.
   - Сетевой трафик включает отправку пакетов без флагов и, возможно, RST пакетов.
 
+```
+└─# nmap -sA 10.46.48.152
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-06-27 07:17 EDT
+Nmap scan report for 10.46.48.152
+Host is up (0.00096s latency).
+All 1000 scanned ports on 10.46.48.152 are in ignored states.
+Not shown: 1000 unfiltered tcp ports (reset)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.19 seconds
+```
+
 - Режим Xmas:
   - В режиме Xmas Nmap отправляет пакеты с установленными флагами FIN, PSH и URG на целевой порт.
   - Если порт закрыт, удаленный хост должен отправить RST пакет в ответ.
   - Если порт открыт, удаленный хост должен проигнорировать пакет.
   - Сетевой трафик включает отправку пакетов с установленными флагами FIN
+
+```sh
+└─# nmap -sX 10.159.86.74
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-06-27 07:39 EDT
+Nmap scan report for ubuntu-client.dit.local (10.159.86.74)
+Host is up (0.000060s latency).
+Not shown: 977 closed tcp ports (reset)
+PORT     STATE         SERVICE
+21/tcp   open|filtered ftp
+22/tcp   open|filtered ssh
+23/tcp   open|filtered telnet
+25/tcp   open|filtered smtp
+53/tcp   open|filtered domain
+80/tcp   open|filtered http
+111/tcp  open|filtered rpcbind
+139/tcp  open|filtered netbios-ssn
+445/tcp  open|filtered microsoft-ds
+512/tcp  open|filtered exec
+513/tcp  open|filtered login
+514/tcp  open|filtered shell
+1099/tcp open|filtered rmiregistry
+1524/tcp open|filtered ingreslock
+2049/tcp open|filtered nfs
+2121/tcp open|filtered ccproxy-ftp
+3306/tcp open|filtered mysql
+5432/tcp open|filtered postgresql
+5900/tcp open|filtered vnc
+6000/tcp open|filtered X11
+6667/tcp open|filtered irc
+8009/tcp open|filtered ajp13
+8180/tcp open|filtered unknown
+MAC Address: 00:0C:29:FA:DD:34 (VMware)
+
+Nmap done: 1 IP address (1 host up) scanned in 1.40 seconds
+
+```
   Режим UDP:  
   - В режиме UDP, Nmap отправляет UDP пакеты на целевой порт и анализирует ответы. Если порт открыт, Nmap получит ответ. Если порт закрыт, Nmap получит ICMP пакет "Destination Unreachable" или не получит никакого ответа. В Wireshark вы увидите UDP пакеты и возможно ICMP пакеты "Destination Unreachable".
+
+```sh
