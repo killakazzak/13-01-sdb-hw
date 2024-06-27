@@ -24,10 +24,10 @@
 ### Решение Задание 1
 
 ```sh
-[root@rocky8-client ~]# nmap -sV 10.46.48.152
-Starting Nmap 7.92 ( https://nmap.org ) at 2024-06-27 05:23 EDT
+└─# nmap -sV 10.46.48.152
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-06-27 06:52 EDT
 Nmap scan report for 10.46.48.152
-Host is up (0.0018s latency).
+Host is up (0.0016s latency).
 Not shown: 977 closed tcp ports (reset)
 PORT     STATE SERVICE     VERSION
 21/tcp   open  ftp         vsftpd 2.3.4
@@ -40,7 +40,7 @@ PORT     STATE SERVICE     VERSION
 139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
 445/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
 512/tcp  open  exec        netkit-rsh rexecd
-513/tcp  open  login       OpenBSD or Solaris rlogind
+513/tcp  open  login?
 514/tcp  open  tcpwrapped
 1099/tcp open  java-rmi    GNU Classpath grmiregistry
 1524/tcp open  bindshell   Metasploitable root shell
@@ -56,7 +56,7 @@ PORT     STATE SERVICE     VERSION
 Service Info: Hosts:  metasploitable.localdomain, irc.Metasploitable.LAN; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 11.83 seconds
+Nmap done: 1 IP address (1 host up) scanned in 12.07 seconds
 ```
 
 ### Задание 2
